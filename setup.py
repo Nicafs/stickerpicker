@@ -1,34 +1,34 @@
 import setuptools
 
-from sticker.get_version import git_tag, git_revision, version, linkified_version
+# from sticker.get_version import git_tag, git_revision, version, linkified_version
 
 with open("requirements.txt") as reqs:
     install_requires = reqs.read().splitlines()
 
-try:
-    long_desc = open("README.md").read()
-except IOError:
-    long_desc = "Failed to read README.md"
+# try:
+#     long_desc = open("README.md").read()
+# except IOError:
+#     long_desc = "Failed to read README.md"
 
 with open("sticker/version.py", "w") as version_file:
     version_file.write(f"""# Generated in setup.py
 
-git_tag = {git_tag!r}
-git_revision = {git_revision!r}
-version = {version!r}
-linkified_version = {linkified_version!r}
+git_tag = 1
+git_revision = 1
+version = 1.0.0
+linkified_version = teste
 """)
 
 setuptools.setup(
     name="maunium-stickerpicker",
-    version=version,
+    version="1.0.0",
     url="https://github.com/maunium/stickerpicker",
 
     author="Tulir Asokan",
     author_email="tulir@maunium.net",
 
     description="A fast and simple Matrix sticker picker widget",
-    long_description=long_desc,
+    long_description="Teste",
     long_description_content_type="text/markdown",
 
     packages=setuptools.find_packages(),
